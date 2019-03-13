@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="C:/Users/user/Documents/Proyectos Angel Limas/Coral_Joyeria/ExtLibs/okhttp-3.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/Documents/Proyectos Angel Limas/Coral_Joyeria/ExtLibs/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/user/Documents/Proyectos Angel Limas/Coral_Joyeria/ExtLibs/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
