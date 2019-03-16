@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class MainMenu {
 	
@@ -16,7 +17,13 @@ public class MainMenu {
 	private By lnkcarrticon;
 	
 	public MainMenu(){
-		
+		this.lnkinicio = By.xpath("//*[@id=\"menu-item-22\"]/a");
+		this.lnkcontactos =By.xpath("");
 	}
+
+	protected By getLnkinicio() {
+		return lnkinicio;
+	}
+
 	
 }
