@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 /*
 Progress:
 Todos los elementos destacables de menu principal fueron agregados con su debido localizador de elementos
@@ -22,8 +23,9 @@ public class MainMenu {
 	private By combocategory;
 	private By combocriterio;
 	private By lnkcarrticon;
+	private WebDriver driver;
 	
-	public MainMenu(){
+	public MainMenu(WebDriver driver){
 		this.lnkinicio = By.xpath("//*[@id=\"menu-item-22\"]/a");
 		this.lnkcontactos =By.xpath("//*[@id=\"menu-item-20\"]/a");
 		this.lnkcarrito = By.xpath("//*[@id=\"menu-item-23\"]/a");
@@ -34,6 +36,7 @@ public class MainMenu {
 		this.combocategory = By.xpath("//*[@id=\"view-all-guides\"]/li/a");
 		this.combocriterio =By.xpath("//*[@id=\"blog\"]/div/div[3]/div[2]/form/select");
 		this.lnkcarrticon = By.xpath("//*[@id=\"blog\"]/div/div[1]/div[2]/div/a");
+		this.driver = driver;
 	}
 
 	protected By getLnkinicio() {
@@ -71,19 +74,34 @@ public class MainMenu {
 		return lnkcarrticon;
 	}
 	
-	public void clickInicio(WebDriver driver) {
+	public void clickInicio() {
 		driver.findElement(getLnkinicio()).click();
 	}
-	public void clickContactos(WebDriver driver) {
+	public void clickContactos() {
 		driver.findElement(getlnkcontactos()).click();
 	}
-	public void clickCarrito(WebDriver driver) {
+	public void clickCarrito() {
 		driver.findElement(getlnkcarrito()).click();
 	}
-	public void clickAbout(WebDriver driver) {
+	public void clickAbout() {
 		driver.findElement(getLnkabout()).click();
 	}
-	public void clickLogin(WebDriver driver) {
+	public void clickLogin() {
 		driver.findElement(getLnklogin()).click();
+	}
+	public void search(String busqueda) {
+		driver.findElement(txtsearch).sendKeys(busqueda);
+		driver.findElement(btnsearch);		
+	}
+	public void pickCriterio(String opcion) {
+		Select opc = new Select(driver.findElement(combocriterio));
+		opc.selectByVisibleText(opcion);
+	}
+	public void pickCategoria(String opcion)	{
+		Select opc = new Select (driver.findElement(combocategory));
+		opc.selectByVisibleText(opcion);
+	}
+	public void clickCarritoIcon() {
+		driver.findElement(lnkcarrticon).click();
 	}
 }
