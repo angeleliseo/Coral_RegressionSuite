@@ -1,3 +1,4 @@
-/ProductDetails.class
-/SeeProductDescription.class
+/BaseTest.class
+/TestLogin.class
 /pageObjects/
+/testng.xml

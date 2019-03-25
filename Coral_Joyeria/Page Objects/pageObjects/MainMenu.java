@@ -23,6 +23,7 @@ public class MainMenu {
 	private By combocategory;
 	private By combocriterio;
 	private By lnkcarrticon;
+	private By searchResult;
 	private WebDriver driver;
 	
 	public MainMenu(WebDriver driver){
@@ -36,6 +37,7 @@ public class MainMenu {
 		this.combocategory = By.xpath("//*[@id=\"view-all-guides\"]/li/a");
 		this.combocriterio =By.xpath("//*[@id=\"blog\"]/div/div[3]/div[2]/form/select");
 		this.lnkcarrticon = By.xpath("//*[@id=\"blog\"]/div/div[1]/div[2]/div/a");
+		this.searchResult = By.xpath("//*[@id=\"blog\"]/div/div[4]/div/div/p");
 		this.driver = driver;
 	}
 
@@ -89,9 +91,13 @@ public class MainMenu {
 	public void clickLogin() {
 		driver.findElement(getLnklogin()).click();
 	}
-	public void search(String busqueda) {
+	public boolean search(String busqueda) {
 		driver.findElement(txtsearch).sendKeys(busqueda);
-		driver.findElement(btnsearch);		
+		driver.findElement(btnsearch).click();
+		if(driver.findElement(searchResult).getText().contains("No se encontraron productos"))
+			return false;
+		else
+			return true;
 	}
 	public void pickCriterio(String opcion) {
 		Select opc = new Select(driver.findElement(combocriterio));

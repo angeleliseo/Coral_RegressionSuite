@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 public class ProductDetails {
 private WebDriver driver;
   @Test
-  public void dummyTestCase() throws Exception {
+  public void seeProductDetails() throws Exception {
 		driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[1]/div[1]/a")).click();
 		WebElement title = driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[4]/article/div[2]/div[1]/div/h2"));
 		Assert.assertTrue(title.isDisplayed());
@@ -28,7 +28,11 @@ private WebDriver driver;
 		driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[3]/div[2]/form/button")).click();
 		WebElement productTitle = driver.findElement(By.xpath("//*[@id=\"product-29\"]/div[2]/h1"));
 		
-		Assert.assertEquals(productTitle.getText(), "COLLAR CARACOL");
+		Assert.assertEquals(productTitle.getText(), "COLLAR CARACOL");		
+		Thread.sleep(5000);
+		
+		//driver.findElement(By.className("single_add_to_cart_button")).click(); //si funciona para el boton 
+		driver.findElement(By.cssSelector("#blog > div > div.row.rsrc-content > div > div > div > div.summary.entry-summary > form > button")).click();
 		Thread.sleep(5000);
 		
   }
