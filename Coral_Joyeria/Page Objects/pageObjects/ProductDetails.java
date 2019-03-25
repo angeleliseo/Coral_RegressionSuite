@@ -26,6 +26,7 @@ public class ProductDetails {
 	
 	public void añadirAlCarro(int cantidad) {
 		if (cantidad >0) {
+			driver.findElement(txtCantidad).clear();
 			driver.findElement(txtCantidad).sendKeys(""+cantidad);
 			driver.findElement(btnAlCarrito).click();
 		}
@@ -54,5 +55,12 @@ public class ProductDetails {
 			return false;
 		}
 		
+	}
+	public boolean addToCartVerifySeveral() {
+		if (driver.findElement(lblAddedToCart).getText().contains("han sido añadidos a tu carrito")) {
+			return true;
+		}else {
+			return false;
+		}		
 	}
 }

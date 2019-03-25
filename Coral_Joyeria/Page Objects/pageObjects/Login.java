@@ -63,9 +63,10 @@ public class Login {
 	}
 	
 	public void logOff() {
-		if (loginVerificationPass()) {
-			driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[1]/div[1]/a")).click();		
-			driver.findElement(lnkLogOff).click();
-		}
+	//	if (loginVerificationPass()) {
+			//driver.findElement(By.xpath("//*[@id=\"blog\"]/div/div[1]/div[1]/a")).click();
+			driver.navigate().to("http://companymx.com/coral/mi-cuenta/customer-logout/");
+			//driver.findElement(lnkLogOff).click();
+		//}
 	}
 }

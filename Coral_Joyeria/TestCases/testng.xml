@@ -6,4 +6,9 @@
             <class name="TestLogin"/>
         </classes>
     </test>
+    <test name="ProductDetails">
+        <classes>
+            <class name="TestProductDetails"/>
+        </classes>
+    </test>
 </suite>

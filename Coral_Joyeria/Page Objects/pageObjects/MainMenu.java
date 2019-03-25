@@ -94,10 +94,12 @@ public class MainMenu {
 	public boolean search(String busqueda) {
 		driver.findElement(txtsearch).sendKeys(busqueda);
 		driver.findElement(btnsearch).click();
-		if(driver.findElement(searchResult).getText().contains("No se encontraron productos"))
+		try {
+			driver.findElement(searchResult).getText().contains("No se encontraron productos");
 			return false;
-		else
+		}catch (Exception e) {
 			return true;
+		}
 	}
 	public void pickCriterio(String opcion) {
 		Select opc = new Select(driver.findElement(combocriterio));
