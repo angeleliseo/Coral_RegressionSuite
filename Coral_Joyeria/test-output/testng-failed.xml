@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Sprint 1]">
+  <test thread-count="5" name="TestLogin(failed)">
     <classes>
-      <class name="TestProductDetails">
+      <class name="TestLogin">
         <methods>
-          <include name="clean"/>
           <include name="setup"/>
-          <include name="addMoreThanOneToCart"/>
+          <include name="clean"/>
+          <include name="testLoginBadAccount"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- TestProductDetails -->
+      </class> <!-- TestLogin -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- TestLogin(failed) -->
+</suite> <!-- Failed suite [Sprint 1] -->

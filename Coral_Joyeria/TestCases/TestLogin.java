@@ -52,6 +52,6 @@ public class TestLogin extends BaseTest {
 		menu = home.goToLogin();
 		menu.clickLogin();
 		login.login("john_due", "fail");
-		Assert.assertFalse(login.loginVerificationFail());
+		Assert.assertFalse(login.loginVerificationPass());
 	}
 }
